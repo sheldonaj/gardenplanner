@@ -3,6 +3,9 @@
 	"description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
 	"version": "0.0.1",
 	"author": "Sheldon",
+	"config": {
+    "unsafe-perm":true
+	},
 	"engines": {
 		"node": "0.10.x",
 		"npm": "1.4.x"
@@ -10,7 +13,7 @@
 	"scripts": {
 		"start": "grunt",
 		"test": "grunt test",
-		"postinstall": "bower install --config.interactive=false"
+		"postinstall": "node_modules/bower/bin/bower install --config.interactive=false --allow-root"
 	},
 	"dependencies": {
 		"express": "~4.10.1",
