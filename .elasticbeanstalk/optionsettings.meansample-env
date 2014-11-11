@@ -29,6 +29,7 @@ GzipCompression=false
 NodeCommand=
 NodeVersion=0.10.31
 ProxyServer=nginx
+NODE_ENV=production
 
 [aws:elasticbeanstalk:hostmanager]
 LogPublicationControl=false
