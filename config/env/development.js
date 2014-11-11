@@ -3,12 +3,12 @@
 module.exports = {
 	db: 'mongodb://localhost/meansample-dev',
 	app: {
-		title: 'meansample - Development Environment'
+		title: 'Garden Planner - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
-		callbackURL: '/auth/facebook/callback'
+		clientID: process.env.FACEBOOK_ID || '662847740479192',
+		clientSecret: process.env.FACEBOOK_SECRET || '77b74d4e66f3b00feb63dc466e502ce3',
+		callbackURL: '/auth/facebook/callback/'
 	},
 	twitter: {
 		clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',

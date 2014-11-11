@@ -24,8 +24,8 @@ module.exports = {
 		js: 'public/dist/application.min.js'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '662841057146527',
+		clientSecret: process.env.FACEBOOK_SECRET || 'fa0609eb63aca3be88715e655d763f38',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {
