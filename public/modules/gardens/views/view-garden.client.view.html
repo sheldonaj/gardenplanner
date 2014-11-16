@@ -1,0 +1,38 @@
+<section data-ng-controller="GardensController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="garden.title"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="authentication.user._id == garden.user._id">
+		<a class="btn btn-primary" href="/#!/gardens/{{garden._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="garden.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="garden.user.displayName"></span>
+		</em>
+	</small>
+	<div class="lead">
+		<label>Garden Size</label>
+		<br>
+		<label>Width = </label>
+		<span data-ng-bind="garden.width"></span>
+		<label>Length = </label>
+		<span data-ng-bind="garden.length"></span>
+	</div>
+	<div>
+		<table class="garden-content">
+      		<tr class="animate-repeat" ng-repeat="row in garden.rows">
+        		<td ng-repeat="square in row track by $index">
+        			<img ng-src="{{square.plant}}">
+        		</td>
+      		</tr>
+    	</table>
+	</div>
+</section>

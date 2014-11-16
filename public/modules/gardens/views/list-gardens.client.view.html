@@ -1,0 +1,25 @@
+<section data-ng-controller="GardensController" data-ng-init="find()">
+	<div class="page-header">
+		<h1>Gardens</h1>
+	</div>
+	<div class="list-group">
+		<a data-ng-repeat="garden in gardens" data-ng-href="#!/gardens/{{garden._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created on
+				<span data-ng-bind="garden.created | date:'mediumDate'"></span>
+				by
+				<span data-ng-bind="garden.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="garden.title"></h4>
+			<small class="list-group-item-text">
+				Size
+				<span data-ng-bind="garden.width"></span>
+				x
+				<span data-ng-bind="garden.length"></span>
+			</small>
+		</a>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="gardens.$resolved && !gardens.length">
+		No gardens yet, why don't you <a href="/#!/gardens/create">create one</a>?
+	</div>
+</section>

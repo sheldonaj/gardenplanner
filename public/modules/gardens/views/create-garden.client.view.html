@@ -1,0 +1,64 @@
+<section data-ng-controller="GardensController">
+	<div class="page-header">
+		<h1>New Garden</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="gardenForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error': gardenForm.title.$dirty && gardenForm.title.$invalid }">
+					<label class="control-label" for="title">Garden's Name</label>
+					<div class="controls">
+						<input name="title" type="text" data-ng-model="title" id="title" class="form-control" placeholder="Enter a Garden Name" required>
+					</div>
+				</div>
+				<label id="size" class="size" for="size">Garden size</label>
+				<div id="size" class="form-group size">
+					<label class="control-label" for="width">Width</label>
+					<div class="controls">
+						<input name="width" type="number" data-ng-model="garden.width" ng-change="resize()" id="width" class="form-control numberinput" placeholder="1" min="1" max="99" ng-pattern="onlyIntegers" required>
+					</div>
+					<div ng-show="gardenForm.width.$invalid" class="help-block">
+						<p ng-show="gardenForm.width.$error.required" class="text-danger">Width must be a valid number.</p>
+						<p ng-show="gardenForm.width.$error.min || gardenForm.width.$error.max" class="text-danger">Width must be greater than 0 and less than 100.</p>
+						<p ng-show="gardenForm.width.$error.pattern" class="text-danger">Width must be a whole number.</p>
+					</div>
+					<label class="control-label" for="length">Length</label>
+					<div class="controls">
+						<input name="length" type="number" data-ng-model="garden.length" ng-change="resize()" id="length" class="form-control numberinput" placeholder="1" min="1" max="99" ng-pattern="onlyIntegers" required>
+					</div>
+					<div ng-show="gardenForm.length.$invalid" class="help-block">
+						<p ng-show="gardenForm.length.$error.required" class="text-danger">Length must be a valid number.</p>
+						<p ng-show="gardenForm.length.$error.min || gardenForm.length.$error.max" class="text-danger">Length must be greater than 0 and less than 100.</p>
+						<p ng-show="gardenForm.length.$error.pattern" class="text-danger">Length must be a whole number.</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" ng-disabled="gardenForm.$invalid" class="btn btn-default">
+				</div>
+				<div class="leftcolumn">
+					<label for="gardenlayout">Garden Layout</label>
+					<table id="gardenlayout" class="garden-content">
+      					<tr class="animate-repeat" ng-repeat="row in garden.rows">
+        					<td ng-repeat="square in row track by $index">
+        						<img x-lvl-drop-target="true" x-on-drop="dropped(dragPlant, dropId)" ng-src="{{square.plant}}">
+        					</td>
+      					</tr>
+    				</table>
+				</div>
+				<div class="rightcolumn">
+					<label for="plants">Drag plants from here to your garden layout</label>
+					<table id="plants" class="garden-content">
+      					<tr class="animate-repeat" ng-repeat="plant in plants">
+        					<td>
+        						<img x-lvl-draggable="true" ng-src="{{plant.imageUrl}}">
+        					</td>
+      					</tr>
+    				</table>
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
