@@ -39,7 +39,8 @@ describe('Garden CRUD tests', function() {
 		user.save(function() {
 			garden = {
 				title: 'Garden Title',
-				content: 'Garden Content'
+				width: 1,
+				length: 1
 			};
 
 			done();

@@ -30,7 +30,8 @@ describe('Garden Model Unit Tests:', function() {
 		user.save(function() {
 			garden = new Garden({
 				title: 'Garden Title',
-				content: 'Garden Content',
+				width: 1,
+				length: 1, 
 				user: user
 			});
 
@@ -54,6 +55,26 @@ describe('Garden Model Unit Tests:', function() {
 				done();
 			});
 		});
+
+		it('should be able to show an error when try to save if width invalid', function(done) {
+			garden.width = 0;
+
+			return garden.save(function(err) {
+				should.exist(err);
+				done();
+			});
+		});
+
+		it('should be able to show an error when try to save if length invalid', function(done) {
+			garden.length = 0;
+
+			return garden.save(function(err) {
+				should.exist(err);
+				done();
+			});
+		});
+
+
 	});
 
 	afterEach(function(done) {

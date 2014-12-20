@@ -54,13 +54,34 @@
 			// Create sample garden using the Gardens service
 			var sampleGarden = new Gardens({
 				title: 'An Garden about MEAN',
-				content: 'MEAN rocks!'
+				width: 1,
+				length: 1
 			});
+
+			var samplePlants = [
+				{
+					"imageUrl":"/modules/gardens/img/empty.jpg",
+					"name":"Empty"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/carrot.jpg",
+					"name":"Carrot"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/tomato.jpg",
+					"name":"Tomato"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/pepper.jpg",
+					"name":"Pepper"
+				}
+			];
 
 			// Create a sample gardens array that includes the new garden
 			var sampleGardens = [sampleGarden];
 
 			// Set GET response
+			$httpBackend.expectGET('plants/').respond(samplePlants);
 			$httpBackend.expectGET('gardens').respond(sampleGardens);
 
 			// Run controller functionality
@@ -75,13 +96,34 @@
 			// Define a sample garden object
 			var sampleGarden = new Gardens({
 				title: 'An Garden about MEAN',
-				content: 'MEAN rocks!'
+				width: 1,
+				length: 1
 			});
+
+			var samplePlants = [
+				{
+					"imageUrl":"/modules/gardens/img/empty.jpg",
+					"name":"Empty"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/carrot.jpg",
+					"name":"Carrot"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/tomato.jpg",
+					"name":"Tomato"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/pepper.jpg",
+					"name":"Pepper"
+				}
+			];
 
 			// Set the URL parameter
 			$stateParams.gardenId = '525a8422f6d0f87f0e407a33';
 
 			// Set GET response
+			$httpBackend.expectGET('plants/').respond(samplePlants);
 			$httpBackend.expectGET(/gardens\/([0-9a-fA-F]{24})$/).respond(sampleGarden);
 
 			// Run controller functionality
@@ -96,21 +138,46 @@
 			// Create a sample garden object
 			var sampleGardenPostData = new Gardens({
 				title: 'An Garden about MEAN',
-				content: 'MEAN rocks!'
+				width: 1,
+				length: 1,
+				rows:[[{"id":1,"plant":"/modules/gardens/img/empty.jpg"}]]
 			});
+
+			var samplePlants = [
+				{
+					"imageUrl":"/modules/gardens/img/empty.jpg",
+					"name":"Empty"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/carrot.jpg",
+					"name":"Carrot"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/tomato.jpg",
+					"name":"Tomato"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/pepper.jpg",
+					"name":"Pepper"
+				}
+			];
 
 			// Create a sample garden response
 			var sampleGardenResponse = new Gardens({
 				_id: '525cf20451979dea2c000001',
 				title: 'An Garden about MEAN',
-				content: 'MEAN rocks!'
+				width: 1,
+				length: 1,
+				rows:[[{"id":1,"plant":"/modules/gardens/img/empty.jpg"}]]
 			});
 
 			// Fixture mock form input values
 			scope.title = 'An Garden about MEAN';
-			scope.content = 'MEAN rocks!';
+			scope.width = 1;
+			scope.length = 1;
 
 			// Set POST response
+			$httpBackend.expectGET('plants/').respond(samplePlants);
 			$httpBackend.expectPOST('gardens', sampleGardenPostData).respond(sampleGardenResponse);
 
 			// Run controller functionality
@@ -119,7 +186,8 @@
 
 			// Test form inputs are reset
 			expect(scope.title).toEqual('');
-			expect(scope.content).toEqual('');
+			expect(scope.width).toEqual(1);
+			expect(scope.length).toEqual(1);
 
 			// Test URL redirection after the garden was created
 			expect($location.path()).toBe('/gardens/' + sampleGardenResponse._id);
@@ -130,13 +198,34 @@
 			var sampleGardenPutData = new Gardens({
 				_id: '525cf20451979dea2c000001',
 				title: 'An Garden about MEAN',
-				content: 'MEAN Rocks!'
+				width: 1,
+				length: 1
 			});
+
+			var samplePlants = [
+				{
+					"imageUrl":"/modules/gardens/img/empty.jpg",
+					"name":"Empty"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/carrot.jpg",
+					"name":"Carrot"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/tomato.jpg",
+					"name":"Tomato"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/pepper.jpg",
+					"name":"Pepper"
+				}
+			];
 
 			// Mock garden in scope
 			scope.garden = sampleGardenPutData;
 
 			// Set PUT response
+			$httpBackend.expectGET('plants/').respond(samplePlants);
 			$httpBackend.expectPUT(/gardens\/([0-9a-fA-F]{24})$/).respond();
 
 			// Run controller functionality
@@ -153,10 +242,30 @@
 				_id: '525a8422f6d0f87f0e407a33'
 			});
 
+			var samplePlants = [
+				{
+					"imageUrl":"/modules/gardens/img/empty.jpg",
+					"name":"Empty"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/carrot.jpg",
+					"name":"Carrot"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/tomato.jpg",
+					"name":"Tomato"
+				},
+				{
+					"imageUrl":"/modules/gardens/img/pepper.jpg",
+					"name":"Pepper"
+				}
+			];
+
 			// Create new gardens array and include the garden
 			scope.gardens = [sampleGarden];
 
 			// Set expected DELETE response
+			$httpBackend.expectGET('plants/').respond(samplePlants);
 			$httpBackend.expectDELETE(/gardens\/([0-9a-fA-F]{24})$/).respond(204);
 
 			// Run controller functionality

@@ -30,7 +30,8 @@ var GardenSchema = new Schema({
 	length: {
 		type: Number,
 		default: '1',
-		required: 'Length must be a postive, whole number'
+		required: 'Length must be a postive, whole number',
+		min: [1, 'Length ({VALUE}) is below the limit ({MIN}).']
 	},
 	user: {
 		type: Schema.ObjectId,
