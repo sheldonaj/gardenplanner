@@ -60,20 +60,20 @@
 
 			var samplePlants = [
 				{
-					"imageUrl":"/modules/gardens/img/empty.jpg",
-					"name":"Empty"
+					'imageUrl':'/modules/gardens/img/empty.jpg',
+					'name':'Empty'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/carrot.jpg",
-					"name":"Carrot"
+					'imageUrl':'/modules/gardens/img/carrot.jpg',
+					'name':'Carrot'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/tomato.jpg",
-					"name":"Tomato"
+					'imageUrl':'/modules/gardens/img/tomato.jpg',
+					'name':'Tomato'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/pepper.jpg",
-					"name":"Pepper"
+					'imageUrl':'/modules/gardens/img/pepper.jpg',
+					'name':'Pepper'
 				}
 			];
 
@@ -102,20 +102,20 @@
 
 			var samplePlants = [
 				{
-					"imageUrl":"/modules/gardens/img/empty.jpg",
-					"name":"Empty"
+					'imageUrl':'/modules/gardens/img/empty.jpg',
+					'name':'Empty'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/carrot.jpg",
-					"name":"Carrot"
+					'imageUrl':'/modules/gardens/img/carrot.jpg',
+					'name':'Carrot'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/tomato.jpg",
-					"name":"Tomato"
+					'imageUrl':'/modules/gardens/img/tomato.jpg',
+					'name':'Tomato'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/pepper.jpg",
-					"name":"Pepper"
+					'imageUrl':'/modules/gardens/img/pepper.jpg',
+					'name':'Pepper'
 				}
 			];
 
@@ -140,25 +140,25 @@
 				title: 'An Garden about MEAN',
 				width: 1,
 				length: 1,
-				rows:[[{"id":1,"plant":"/modules/gardens/img/empty.jpg"}]]
+				rows:[[{'id':1,'plant':'/modules/gardens/img/empty.jpg'}]]
 			});
 
 			var samplePlants = [
 				{
-					"imageUrl":"/modules/gardens/img/empty.jpg",
-					"name":"Empty"
+					'imageUrl':'/modules/gardens/img/empty.jpg',
+					'name':'Empty'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/carrot.jpg",
-					"name":"Carrot"
+					'imageUrl':'/modules/gardens/img/carrot.jpg',
+					'name':'Carrot'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/tomato.jpg",
-					"name":"Tomato"
+					'imageUrl':'/modules/gardens/img/tomato.jpg',
+					'name':'Tomato'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/pepper.jpg",
-					"name":"Pepper"
+					'imageUrl':'/modules/gardens/img/pepper.jpg',
+					'name':'Pepper'
 				}
 			];
 
@@ -168,7 +168,7 @@
 				title: 'An Garden about MEAN',
 				width: 1,
 				length: 1,
-				rows:[[{"id":1,"plant":"/modules/gardens/img/empty.jpg"}]]
+				rows:[[{'id':1,'plant':'/modules/gardens/img/empty.jpg'}]]
 			});
 
 			// Fixture mock form input values
@@ -204,20 +204,20 @@
 
 			var samplePlants = [
 				{
-					"imageUrl":"/modules/gardens/img/empty.jpg",
-					"name":"Empty"
+					'imageUrl':'/modules/gardens/img/empty.jpg',
+					'name':'Empty'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/carrot.jpg",
-					"name":"Carrot"
+					'imageUrl':'/modules/gardens/img/carrot.jpg',
+					'name':'Carrot'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/tomato.jpg",
-					"name":"Tomato"
+					'imageUrl':'/modules/gardens/img/tomato.jpg',
+					'name':'Tomato'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/pepper.jpg",
-					"name":"Pepper"
+					'imageUrl':'/modules/gardens/img/pepper.jpg',
+					'name':'Pepper'
 				}
 			];
 
@@ -244,20 +244,20 @@
 
 			var samplePlants = [
 				{
-					"imageUrl":"/modules/gardens/img/empty.jpg",
-					"name":"Empty"
+					'imageUrl':'/modules/gardens/img/empty.jpg',
+					'name':'Empty'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/carrot.jpg",
-					"name":"Carrot"
+					'imageUrl':'/modules/gardens/img/carrot.jpg',
+					'name':'Carrot'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/tomato.jpg",
-					"name":"Tomato"
+					'imageUrl':'/modules/gardens/img/tomato.jpg',
+					'name':'Tomato'
 				},
 				{
-					"imageUrl":"/modules/gardens/img/pepper.jpg",
-					"name":"Pepper"
+					'imageUrl':'/modules/gardens/img/pepper.jpg',
+					'name':'Pepper'
 				}
 			];
 

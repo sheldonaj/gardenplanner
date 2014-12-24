@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var livereload = require('gulp-livereload');
+var jshint = require('gulp-jshint');
+var csslint = require('gulp-csslint');
 
 var watchFiles = {
 		serverViews: ['app/views/**/*.*'],
@@ -19,7 +21,7 @@ gulp.task('watch', function () {
 		.on('change', function() {
 			changedFiles = watchFiles.serverViews;
 		});
-	gulp.watch(watchFiles.serverJS, ['reload'])
+	gulp.watch(watchFiles.serverJS, ['jshint', 'reload'])
 		.on('change', function() {
 			changedFiles = watchFiles.serverJS;
 		});	
@@ -27,11 +29,11 @@ gulp.task('watch', function () {
 		.on('change', function() {
 			changedFiles = watchFiles.clientViews;
 		});	
-	gulp.watch(watchFiles.clientJS, ['reload'])
+	gulp.watch(watchFiles.clientJS, ['jshint','reload'])
 		.on('change', function() {
 			changedFiles = watchFiles.clientJS;
 		});
-	gulp.watch(watchFiles.clientCSS, ['reload'])
+	gulp.watch(watchFiles.clientCSS, ['csslint','reload'])
 		.on('change', function() {
 			changedFiles = watchFiles.clientCSS;
 		});
@@ -42,7 +44,22 @@ gulp.task('reload', function () {
 		.pipe(livereload());
 });
 
-gulp.task('default', ['watch', 'serve'], function() {
+gulp.task('lint', ['jshint', 'csslint'], function() {
+});
+
+gulp.task('jshint', function () {
+	return gulp.src(watchFiles.clientJS.concat(watchFiles.serverJS))
+    	.pipe(jshint())
+    	.pipe(jshint.reporter('default', { verbose: true }));
+});
+
+gulp.task('csslint', function () {
+	gulp.src(watchFiles.clientCSS)
+	.pipe(csslint('.csslintrc'))
+    .pipe(csslint.reporter());
+});
+
+gulp.task('default', ['lint', 'watch', 'serve'], function() {
 });
 
 gulp.task('serve', function () {
@@ -51,7 +68,7 @@ gulp.task('serve', function () {
 		ext: 'html js',
 		watch: watchFiles.serverViews.concat(watchFiles.serverJS),
 		nodeArgs: ['--debug']})
-    .on('change', [])
+    .on('change', ['jslint'])
     .on('restart', function () {
       console.log('restarted!')
     })
