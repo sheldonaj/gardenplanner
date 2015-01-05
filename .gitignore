@@ -18,3 +18,4 @@ app/tests/coverage/
 
 .elasticbeanstalk/config
 config/sslcerts/key.pem
+data/db/*

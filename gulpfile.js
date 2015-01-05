@@ -3,6 +3,8 @@ var nodemon = require('gulp-nodemon');
 var livereload = require('gulp-livereload');
 var jshint = require('gulp-jshint');
 var csslint = require('gulp-csslint');
+var mocha = require('gulp-mocha');
+var env = require('gulp-env');
 
 var watchFiles = {
 		serverViews: ['app/views/**/*.*'],
@@ -62,12 +64,26 @@ gulp.task('csslint', function () {
 gulp.task('default', ['lint', 'watch', 'serve'], function() {
 });
 
+gulp.task('mochaTest', function () {
+	env({
+    	vars: {
+      		NODE_ENV: 'test'
+    	}
+  	});
+	return gulp.src(watchFiles.mochaTests)
+		.pipe(mocha(require('./server.js')));
+});
+
+gulp.task('test', ['mochaTest'], function() {
+});
+
 gulp.task('serve', function () {
 	nodemon({ 
 		script: 'server.js',
 		ext: 'html js',
-		watch: watchFiles.serverViews.concat(watchFiles.serverJS),
-		nodeArgs: ['--debug']})
+		watch: watchFiles.serverViews.concat(watchFiles.serverJS)
+		//nodeArgs: ['--debug']
+	})
     .on('change', ['jslint'])
     .on('restart', function () {
       console.log('restarted!')
